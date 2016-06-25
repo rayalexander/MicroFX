@@ -1,25 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Ninja.MicroFx.Properties;
+using Topshelf;
+using Topshelf.ServiceConfigurators;
 
 namespace Ninja.MicroFx
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        static void Main()
+        private static int Main(string[] args)
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-            { 
-                new Service1() 
-            };
-            ServiceBase.Run(ServicesToRun);
+            var exitCode = HostFactory.Run(c =>
+            {
+                c.Service<Service>(service =>
+                {
+                    ServiceConfigurator<Service> s = service;
+                    s.ConstructUsing(() => new Service());
+                    s.WhenStarted(a => a.Start());
+                    s.WhenStopped(a => a.Stop());
+                });
+
+                c.SetServiceName(Settings.Default.ServiceName);
+                c.SetDisplayName(Settings.Default.ServiceName);
+                c.SetDescription(Settings.Default.Description);
+
+                c.StartAutomatically();
+                c.RunAsLocalSystem();
+
+               // c.DependsOnEventLog();
+               // c.DependsOnMsSql();
+            });
+
+            return (int) exitCode;
         }
     }
+
 }

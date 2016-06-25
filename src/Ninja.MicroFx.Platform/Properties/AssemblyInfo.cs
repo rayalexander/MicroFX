@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ninja.MicroFx.Test")]
+[assembly: AssemblyTitle("Ninja.MicroFx.Platform")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ninja.MicroFx.Test")]
+[assembly: AssemblyProduct("Ninja.MicroFx.Platform")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3870b870-002c-4dc1-865c-f8fd879bad8c")]
+[assembly: Guid("6263e0b2-3264-4d35-a078-063c9e4adcd1")]
 
 // Version information for an assembly consists of the following four values:
 //
