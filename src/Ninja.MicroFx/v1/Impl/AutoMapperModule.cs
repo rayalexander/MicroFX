@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Ninja.MicroFx.Domain;
-using Ninja.MicroFx.Platform;
+using Ninja.MicroFx.Platform.AutoMapper;
 using Ninja.MicroFx.v1.Contracts;
 
 namespace Ninja.MicroFx.v1.Impl
 {
-    public class AutoMapperModule : IAutoMapperModule
+    public class AutoMapperModule : IMapperModule
     {
         public void Load()
         {

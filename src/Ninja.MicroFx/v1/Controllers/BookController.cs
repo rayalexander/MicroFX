@@ -14,15 +14,16 @@ namespace Ninja.MicroFx.v1.Controllers
             this.resource = resource;
         }
 
-
+        [AllowAnonymous]
         [HttpGet, Route]
         public HttpResponseMessage Get()
         {
             return Request.CreateResponse(HttpStatusCode.OK, resource.GetBooks());
         }
 
+        [AllowAnonymous]
         [HttpGet, Route("{bookId}")]
-        public HttpResponseMessage Get1(int bookId)
+        public HttpResponseMessage Get(int bookId)
         {
             return Request.CreateResponse(HttpStatusCode.OK, resource.GetBook(bookId));
         } 

@@ -1,25 +1,13 @@
 ﻿using System.Web.Http;
 using Ninja.MicroFx.Platform.Configuration;
-using Owin;
 
 namespace Ninja.MicroFx
 {
-    public class Startup
+    public class Startup : BaseStartup
     {
-        public void Configuration(IAppBuilder app)
+        public Startup() : base(new HttpConfiguration())
         {
-            var config = new HttpConfiguration();
-
-            
-            app.ConfigureWebApi(config);
-            app.ConfigureIoC(config);
-
-            app.ConfigureAutoMapper();
-
-            SwaggerConfig.Register();
-
         }
-
     }
 }
 

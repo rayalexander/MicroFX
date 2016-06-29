@@ -1,12 +1,11 @@
-
 using System.Web.Http;
-using Ninja.MicroFx;
+using Ninja.MicroFx.Platform.Configuration;
 using Swashbuckle.Application;
 using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace Ninja.MicroFx
+namespace Ninja.MicroFx.Platform.Configuration
 {
     public class SwaggerConfig
     {
